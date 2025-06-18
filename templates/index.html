@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goel's AI Image Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=GeoQgcZeQOLA&format=png&color=000000" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="main-container">
+        <header class="app-header">
+            <h1>Text To Image Generator</h1>
+        </header>
+
+        <div class="input-section">
+            <textarea id="promptInput" rows="3" placeholder="Describe the image you want to create... e.g., 'A majestic lion wearing a crown, cinematic lighting'"></textarea>
+            <button id="generateButton">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Generate
+            </button>
+        </div>
+
+        <div class="result-section" id="resultSection">
+            <!-- Generated image will appear here -->
+            <div class="placeholder">
+                <i class="fa-solid fa-image"></i>
+                <p>Your generated image will appear here</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Particle animation configuration
+        tsParticles.load("particles-js", { background: { color: { value: "#1a0f35" } }, fpsLimit: 60, interactivity: { events: { onHover: { enable: true, mode: "repulse" }, resize: true }, modes: { repulse: { distance: 100, duration: 0.4 } } }, particles: { color: { value: ["#ffffff", "#673ab7", "#c7a2f5"] }, links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.2, width: 1 }, collisions: { enable: true }, move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 1.5, straight: false }, number: { density: { enable: true, area: 800 }, value: 80 }, opacity: { value: 0.3 }, shape: { type: "circle" }, size: { value: { min: 1, max: 4 } } }, detectRetina: true });
+    </script>
+</body>
+</html>
