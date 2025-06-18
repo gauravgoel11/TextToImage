@@ -1,5 +1,6 @@
 Flask
 google-generativeai
+google
 python-dotenv
 Pillow
 gunicorn
