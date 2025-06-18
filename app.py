@@ -7,7 +7,7 @@ import base64
 from dotenv import load_dotenv
 
 # Import the internal Google libraries (same as Colab)
-from google import genai
+import google.generativeai as genai
 from google.genai import types
 
 # Load environment variables from .env file
